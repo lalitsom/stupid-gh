@@ -12,12 +12,12 @@
       const offButton = document.getElementById("off-button");
 
       onButton.addEventListener("click", async () => {
-        await fetch("https://192.168.29.131:8080/boton");
+        await fetch("http://192.168.29.131:8080/boton");
         console.log("On button clicked!");
       });
 
       offButton.addEventListener("click", async () => {
-        await fetch("https://192.168.29.131:8080/botoff");
+        await fetch("http://192.168.29.131:8080/botoff");
         console.log("Off button clicked!");
       });
     </script>
