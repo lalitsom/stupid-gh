@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stupid bot</title>
-</head>
-<body>
+    <title>Button Example</title>
+  </head>
+  <body>
+    <button id="on-button">On</button>
+    <button id="off-button">Off</button>
+    <script>
+      const onButton = document.getElementById("on-button");
+      const offButton = document.getElementById("off-button");
 
-    <button onclick="on">ON</button>
+      onButton.addEventListener("click", async () => {
+        await fetch("http://192.168.29.131:8080/boton");
+        console.log("On button clicked!");
+      });
 
-    
-    <button onclick="on">ON</button>
-    
-</body>
+      offButton.addEventListener("click", async () => {
+        await fetch("http://192.168.29.131:8080/botoff");
+        console.log("Off button clicked!");
+      });
+    </script>
+  </body>
 </html>
